@@ -17,7 +17,7 @@ const notoSansKR = Noto_Sans_KR({
   display: "swap",
 });
 
-const BASE_URL = "https://sayenglish.com"; // TODO: 실제 도메인으로 교체
+const BASE_URL = "https://say-english-academy.vercel.app";
 
 export const metadata: Metadata = {
   title: {
