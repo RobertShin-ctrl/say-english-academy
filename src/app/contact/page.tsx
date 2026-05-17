@@ -134,21 +134,19 @@ export default function ContactPage() {
                 </li>
               </ul>
 
-              {/* Map placeholder */}
-              <div
-                className="mt-8 rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#F8FAFC] h-52 flex items-center justify-center"
-                role="img"
-                aria-label="학원 위치 지도 (울산광역시 남구 신선로 83번길 1, 2층)"
-              >
-                <div className="text-center px-6">
-                  <MapPin size={32} className="text-[#2563EB] mx-auto mb-3" />
-                  <p className="text-sm font-medium text-[#374151]">
-                    울산광역시 남구 신선로 83번길 1, 2층
-                  </p>
-                  <p className="text-xs text-[#6B7280] mt-1">
-                    (지도는 추후 연동 예정)
-                  </p>
-                </div>
+              {/* Google Maps */}
+              <div className="mt-8 rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
+                <iframe
+                  src="https://maps.google.com/maps?q=울산광역시+남구+신선로+83번길+1&hl=ko&z=16&output=embed"
+                  width="100%"
+                  height="260"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="세이잉글리쉬어학원 위치"
+                  aria-label="세이잉글리쉬어학원 위치 지도"
+                />
               </div>
             </AnimatedSection>
 
