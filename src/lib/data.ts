@@ -1,7 +1,7 @@
 // ─── External Links (쉽게 교체 가능한 외부 링크) ──────────────────────────
 export const SITE_LINKS = {
-  consultationBooking: "https://forms.gle/placeholder-booking-form", // 상담 예약 링크로 교체
-  kakaoOpenChat: "https://open.kakao.com/o/placeholder",            // 카카오 오픈채팅 링크로 교체
+  consultationBooking: "https://calendar.app.google/dVy9R9jzmnwERfeUA",
+  kakaoOpenChat: "https://open.kakao.com/o/sPSNt5Kh",
 } as const;
 
 // ─── Site Config ──────────────────────────────────────────────────────────────
