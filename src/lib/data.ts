@@ -57,7 +57,7 @@ export const PROGRAMS: Program[] = [
     ageGroup: "5~7세, 초등 1학년",
     daysPerWeek: "주 3일",
     badge: "원어민 수업",
-    tuition: "월 12만원",
+    tuition: "월 14만원",
     features: ["파닉스 & 알파벳", "기초 회화", "원어민 수업", "영어와 친해지기"],
     description:
       "영어를 처음 만나는 아이들이 두려움 없이 언어와 친해질 수 있도록 놀이 중심, 경험 중심으로 수업을 구성합니다. 원어민 선생님과 함께하는 파닉스와 기초 회화로 영어의 소리와 리듬을 자연스럽게 익힙니다.",
@@ -79,7 +79,7 @@ export const PROGRAMS: Program[] = [
     ageGroup: "중학교 1~3학년",
     daysPerWeek: "주 3일",
     badge: "내신 대비",
-    tuition: "월 22만원",
+    tuition: "월 25만원",
     features: ["내신 · 문법 · 독해", "작문 강화", "입시 대비", "실전 감각 습득"],
     description:
       "중학교 내신과 실전 영어 실력을 동시에 키웁니다. 학교 교과과정에 맞춘 문법, 독해, 작문 수업과 함께 실제로 듣고 말하는 능력을 균형 있게 향상시켜 고등 내신으로 이어지는 연속적 학습을 지원합니다.",
@@ -242,7 +242,7 @@ export const TUITION_TABLE: TuitionRow[] = [
     grade: "유치부 · 초등 1학년",
     daysPerWeek: "주 3회",
     course: "파닉스 · 기초 회화",
-    fee: "월 12만원",
+    fee: "월 14만원",
   },
   {
     grade: "초등 2~6학년",
@@ -254,7 +254,7 @@ export const TUITION_TABLE: TuitionRow[] = [
     grade: "중 1~3학년",
     daysPerWeek: "주 3회",
     course: "중등 영어 · 내신 대비",
-    fee: "월 22만원",
+    fee: "월 25만원",
   },
   {
     grade: "고 1~3학년",
