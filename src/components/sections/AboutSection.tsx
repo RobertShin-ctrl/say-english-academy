@@ -1,3 +1,4 @@
+import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default function AboutSection() {
@@ -44,44 +45,34 @@ export default function AboutSection() {
             </div>
           </AnimatedSection>
 
-          {/* Visual Card */}
+          {/* Photo */}
           <AnimatedSection delay={0.15}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  icon: "🗣️",
-                  title: "말하기·쓰기 실전력",
-                  desc: "실제로 듣고, 말하고, 쓰는 언어로서의 영어",
-                },
-                {
-                  icon: "📖",
-                  title: "영어 기본기",
-                  desc: "파닉스부터 내신까지 단계별 체계적 학습",
-                },
-                {
-                  icon: "🤖",
-                  title: "AI 시대 공부법",
-                  desc: "AI를 활용하는 영어 능력, 프롬프트 엔지니어링",
-                },
-                {
-                  icon: "🌱",
-                  title: "장기 성장",
-                  desc: "유치부부터 성인까지 이어지는 연속적 교육",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-[#F3F4F6] hover:shadow-md transition-shadow"
-                >
-                  <span className="text-3xl mb-3 block" aria-hidden="true">
-                    {item.icon}
-                  </span>
-                  <h3 className="font-bold text-[#102A43] text-sm mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-[#6B7280] text-xs leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+            <div className="space-y-4">
+              <div className="relative rounded-3xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/KakaoTalk_20260517_113951502_01.png"
+                  alt="세이잉글리쉬어학원 원어민 수업"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { icon: "🗣️", title: "말하기·쓰기 실전력" },
+                  { icon: "📖", title: "영어 기본기" },
+                  { icon: "🤖", title: "AI 시대 공부법" },
+                  { icon: "🌱", title: "유치부~성인 전 과정" },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="bg-white rounded-xl p-4 shadow-sm border border-[#F3F4F6] flex items-center gap-3"
+                  >
+                    <span className="text-2xl" aria-hidden="true">{item.icon}</span>
+                    <p className="font-bold text-[#102A43] text-xs">{item.title}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </AnimatedSection>
         </div>

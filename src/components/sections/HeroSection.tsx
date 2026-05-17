@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion, type Transition } from "framer-motion";
 import { MessageCircle, CalendarCheck } from "lucide-react";
+import Image from "next/image";
 import { SITE_CONFIG, SITE_LINKS, STATS } from "@/lib/data";
 
 export default function HeroSection() {
@@ -28,80 +29,107 @@ export default function HeroSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <motion.div {...fadeUp(0)} className="mb-6">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#2563EB]/20 text-[#93C5FD] text-sm font-medium border border-[#2563EB]/30">
-              🎓 {SITE_CONFIG.foundedYear}년 개원 · 울산 남구 영어전문 어학원
-            </span>
-          </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Headline */}
-          <motion.h1
-            {...fadeUp(0.1)}
-            className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6"
-          >
-            대한민국 영어교육의
-            <br />
-            <span className="text-[#FBBF24]">새로운 기준</span>을 만듭니다
-          </motion.h1>
+          {/* Left Column */}
+          <div>
+            {/* Badge */}
+            <motion.div {...fadeUp(0)} className="mb-6">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#2563EB]/20 text-[#93C5FD] text-sm font-medium border border-[#2563EB]/30">
+                🎓 {SITE_CONFIG.foundedYear}년 개원 · 울산 남구 영어전문 어학원
+              </span>
+            </motion.div>
 
-          {/* Subheadline */}
-          <motion.p
-            {...fadeUp(0.2)}
-            className="text-lg sm:text-xl text-blue-200 leading-relaxed mb-10 max-w-2xl"
-          >
-            영어를 시험을 위한 암기과목이 아니라,
-            <br className="hidden sm:block" />
-            실제로 소통하는 언어로 배우는 곳
-          </motion.p>
+            {/* Headline */}
+            <motion.h1
+              {...fadeUp(0.1)}
+              className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6"
+            >
+              대한민국 영어교육의
+              <br />
+              <span className="text-[#FBBF24]">새로운 기준</span>을 만듭니다
+            </motion.h1>
 
-          {/* CTA Buttons */}
+            {/* Subheadline */}
+            <motion.p
+              {...fadeUp(0.2)}
+              className="text-lg sm:text-xl text-blue-200 leading-relaxed mb-10 max-w-2xl"
+            >
+              영어를 시험을 위한 암기과목이 아니라,
+              <br className="hidden sm:block" />
+              실제로 소통하는 언어로 배우는 곳
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              {...fadeUp(0.3)}
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <a
+                href={SITE_LINKS.consultationBooking}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#2563EB] text-white font-bold text-base hover:bg-[#1d4ed8] transition-all hover:scale-105 active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#102A43] shadow-lg shadow-blue-900/40"
+              >
+                <CalendarCheck size={18} />
+                상담일정 온라인으로 예약하기
+              </a>
+              <a
+                href={SITE_LINKS.kakaoOpenChat}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#FBBF24] text-[#111827] font-bold text-base hover:bg-[#f59e0b] transition-all hover:scale-105 active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24] focus-visible:ring-offset-2 focus-visible:ring-offset-[#102A43] shadow-lg shadow-yellow-900/20"
+              >
+                <MessageCircle size={18} />
+                카카오톡 오픈채팅 문의하기
+              </a>
+            </motion.div>
+
+            {/* Stats Cards */}
+            <motion.div
+              {...fadeUp(0.4)}
+              className="mt-12 grid grid-cols-2 gap-3"
+              role="list"
+              aria-label="학원 핵심 정보"
+            >
+              {STATS.map((stat) => (
+                <div
+                  key={stat.label}
+                  role="listitem"
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:bg-white/15 transition-colors"
+                >
+                  <p className="text-2xl font-black text-[#FBBF24] leading-none mb-1">
+                    {stat.value}
+                  </p>
+                  <p className="text-blue-200 text-sm">{stat.label}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right Column — Classroom Photo */}
           <motion.div
             {...fadeUp(0.3)}
-            className="flex flex-col sm:flex-row gap-3"
+            className="hidden lg:block"
           >
-            <a
-              href={SITE_LINKS.consultationBooking}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#2563EB] text-white font-bold text-base hover:bg-[#1d4ed8] transition-all hover:scale-105 active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#102A43] shadow-lg shadow-blue-900/40"
-            >
-              <CalendarCheck size={18} />
-              상담일정 온라인으로 예약하기
-            </a>
-            <a
-              href={SITE_LINKS.kakaoOpenChat}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#FBBF24] text-[#111827] font-bold text-base hover:bg-[#f59e0b] transition-all hover:scale-105 active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24] focus-visible:ring-offset-2 focus-visible:ring-offset-[#102A43] shadow-lg shadow-yellow-900/20"
-            >
-              <MessageCircle size={18} />
-              카카오톡 오픈채팅 문의하기
-            </a>
-          </motion.div>
-        </div>
-
-        {/* Stats Cards */}
-        <motion.div
-          {...fadeUp(0.4)}
-          className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
-          role="list"
-          aria-label="학원 핵심 정보"
-        >
-          {STATS.map((stat) => (
-            <div
-              key={stat.label}
-              role="listitem"
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:bg-white/15 transition-colors"
-            >
-              <p className="text-2xl font-black text-[#FBBF24] leading-none mb-1">
-                {stat.value}
-              </p>
-              <p className="text-blue-200 text-sm">{stat.label}</p>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
+              <Image
+                src="/images/KakaoTalk_20260517_113951502_04.jpg"
+                alt="세이잉글리쉬어학원 실제 수업 현장"
+                width={640}
+                height={480}
+                className="w-full h-auto object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102A43]/60 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5">
+                <p className="text-white font-bold text-sm">실제 수업 현장</p>
+                <p className="text-blue-200 text-xs mt-0.5">최신 스마트 강의실 · 소그룹 집중 수업</p>
+              </div>
             </div>
-          ))}
-        </motion.div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

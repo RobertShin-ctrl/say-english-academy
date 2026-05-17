@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
@@ -36,15 +37,17 @@ export default function SiteHeader() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex flex-col leading-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded"
+            className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded"
             aria-label="세이잉글리쉬어학원 홈으로 이동"
           >
-            <span className="text-[#102A43] font-black text-lg tracking-tight">
-              SAY ENGLISH
-            </span>
-            <span className="text-[#2563EB] text-[10px] font-semibold tracking-widest uppercase">
-              Academy
-            </span>
+            <Image
+              src="/images/KakaoTalk_20260517_113951502.png"
+              alt="SAY ENGLISH Academy"
+              width={120}
+              height={48}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
